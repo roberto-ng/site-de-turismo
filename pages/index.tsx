@@ -13,9 +13,7 @@ const Home: NextPage = () => {
                 */}
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <p className={styles.name}>
-                E aí galera?
-            </p>
+            <p className={styles.name}>Home</p>
         </div>
     )
 }

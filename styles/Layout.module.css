@@ -1,6 +1,10 @@
+.container {
+  position: sticky;
+}
+
 #fundo {
   background: url("/res/fundos/nuvem-fundo.png") 0% 0%;
-  animation: fundoAnimado 30s linear infinite;
+  animation: fundoAnimado 40s linear infinite;
   position: fixed;
   margin: 0px;
   z-index: -1000;
@@ -19,4 +23,48 @@
     transform: translateX(-1030px);
   }
 }
-  
+
+#barra {
+  margin: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#logoContainer {
+  height: 100px;
+  width: 300px;
+  border-radius: 50px;
+  background: white;
+  box-shadow: -2px 4px 50px 0px black;
+}
+
+#barraMenu ul {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+}
+
+#barraMenu li {
+  list-style: none;
+}
+
+#barraMenu li a {
+  color: white;
+  border: 2px solid white;
+  border-radius: 7px;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.4s, color 0.4s;
+  padding: 8px;
+}
+
+#barraMenu li a:hover {
+  background-color: white;
+  color: crimson;
+}
+
+#barraMenu li:not(:last-child) a {
+  margin-right: 5px;
+}
