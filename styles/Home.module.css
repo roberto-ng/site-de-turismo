@@ -2,39 +2,3 @@ p.name {
   color: teal;
   margin: 0;
 }
-
-#fundo {
-  background: url("/res/fundos/nuvem-fundo.png") 0% 0%;
-  animation: fundoAnimado 30s linear infinite;
-  position: fixed;
-  margin: 0px;
-  z-index: -1000;
-  left: 0;
-  right: -1030px;
-  top: 0;
-  bottom: 0;
-}
-
-@keyframes fundoAnimado {
-  from {
-      /*background-position-x: 0%;*/
-      -webkit-transform: translateX(0);
-  }
-
-  to {
-      /*background-position-x: 100%;*/
-      -webkit-transform: translateX(-1030px);
-  }
-}
-
-@-webkit-keyframes fundoAnimado {
-  from {
-      /*background-position-x: 0%;*/
-      transform: translateX(0);
-  }
-
-  to {
-      /*background-position-x: 100%;*/
-      transform: translateX(-1030px);
-  }
-}

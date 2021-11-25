@@ -1,0 +1,22 @@
+#fundo {
+  background: url("/res/fundos/nuvem-fundo.png") 0% 0%;
+  animation: fundoAnimado 30s linear infinite;
+  position: fixed;
+  margin: 0px;
+  z-index: -1000;
+  left: 0;
+  right: -1030px;
+  top: 0;
+  bottom: 0;
+}
+  
+@keyframes fundoAnimado {
+  from {
+    transform: translateX(0);
+  }
+  
+  to {
+    transform: translateX(-1030px);
+  }
+}
+  

@@ -13,9 +13,6 @@ const Home: NextPage = () => {
                 */}
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
-            <div id={styles.fundo}></div>
-
             <p className={styles.name}>
                 E aí galera?
             </p>
