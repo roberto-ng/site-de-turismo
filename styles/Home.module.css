@@ -29,7 +29,7 @@ p.name {
   height: 140px;
   border-radius: 7px;
   margin: 10px;
-  box-shadow: 0px 0px 10px 2px #d33847;
+  box-shadow: 0px 0px 20px 1px crimson;
   font-size: 1.4rem;
   text-align: center;
 }
