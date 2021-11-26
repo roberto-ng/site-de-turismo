@@ -33,11 +33,16 @@
 }
 
 #logoContainer {
-  height: 100px;
-  width: 300px;
-  border-radius: 50px;
+  height: 60px;
+  width: 200px;
+  border-radius: 7px;
   background: white;
-  box-shadow: -2px 4px 50px 0px black;
+  border:  2px solid white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  user-select: none;
+  /* box-shadow: -2px 4px 50px 0px black; */
 }
 
 #barraMenu ul {
@@ -51,18 +56,20 @@
 }
 
 #barraMenu li a {
+  background-color: #c00418;
   color: white;
   border: 2px solid white;
-  border-radius: 7px;
+  border-radius: 4px;
   font-weight: bold;
   text-decoration: none;
   transition: background-color 0.4s, color 0.4s;
   padding: 8px;
+  user-select: none;
 }
 
 #barraMenu li a:hover {
   background-color: white;
-  color: crimson;
+  color: #c00418;
 }
 
 #barraMenu li:not(:last-child) a {

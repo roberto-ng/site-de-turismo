@@ -33,7 +33,9 @@ const Layout: NextPage = ({ children }) => {
             <div id={styles.fundo} />
 
             <div id={styles.barra}>
-                <div id={styles.logoContainer}></div>
+                <div id={styles.logoContainer}>
+                    <img src="/res/logo.png" width="150" height="40" />
+                </div>
 
                 <div id={styles.barraMenu}>
                     <ul>
