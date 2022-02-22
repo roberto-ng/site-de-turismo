@@ -64,16 +64,24 @@ function MenuMobile() {
                 />
             </div>
 
-            <div 
-                id={styles.menuMobile}
-                className={`${menuAberto ? 'aberto' : ''}`}
-            >
+            <div id={styles.menuMobile}>
                 <button onClick={() => setMenuAberto(!menuAberto)}>
                     <FontAwesomeIcon 
                         icon={faBars} 
                         style={{ fontSize: '1.4em', height: '1em' }}
                     />
                 </button>
+
+                <div 
+                    id={styles.menuMobileConteudo}
+                    className={menuAberto ? styles.aberto : ''}
+                >
+                    {menuItens.map((item, i) => (
+                        <a href={item.link}>
+                            {item.texto}
+                        </a>
+                    ))}
+                </div>
             </div>
         </div>
     );
