@@ -1,7 +1,9 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBars } from '@fortawesome/free-solid-svg-icons'
 import styles from '../styles/Layout.module.css';
 
 type Props = {
@@ -50,6 +52,8 @@ function MenuDesktop() {
 }
 
 function MenuMobile() {
+    let [menuAberto, setMenuAberto] = useState(false);
+
     return (
         <div id={styles.barraMobile}>
             <div id={styles.logo}>
@@ -58,6 +62,18 @@ function MenuMobile() {
                     width="150px"
                     height="30px"
                 />
+            </div>
+
+            <div 
+                id={styles.menuMobile}
+                className={`${menuAberto ? 'aberto' : ''}`}
+            >
+                <button onClick={() => setMenuAberto(!menuAberto)}>
+                    <FontAwesomeIcon 
+                        icon={faBars} 
+                        style={{ fontSize: '1.4em', height: '1em' }}
+                    />
+                </button>
             </div>
         </div>
     );

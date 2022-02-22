@@ -82,6 +82,7 @@
 
 #barraMobile {
   display: none;
+  justify-content: space-between;
   background-color: white;
   box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.5);
   position: fixed;
@@ -99,13 +100,34 @@
   margin: 5px;
 }
 
+#menuMobile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#menuMobile button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: crimson;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  box-shadow: 0px 0px 16px 0px rgba(0,0,0,0.5);
+  margin-right: 10px;
+}
+
 @media screen and (max-width: 1180px) {
   #barraMenu, #barra {
     display: none;
   }
 
   #barraMobile {
-    display: inline-block;
+    display: flex;
   }
 
   #conteudo {
