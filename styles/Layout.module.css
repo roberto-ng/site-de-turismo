@@ -80,8 +80,35 @@
   margin-right: 5px;
 }
 
-@media screen and (max-width: 600px) {
-  #barraMenu li a {
-    padding: 2px;
+#barraMobile {
+  display: none;
+  background-color: white;
+  box-shadow: 0px 1px 8px 0px rgba(0,0,0,0.5);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+#barraMobile #logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 186px;
+  height: 50px;
+  margin: 5px;
+}
+
+@media screen and (max-width: 1180px) {
+  #barraMenu, #barra {
+    display: none;
+  }
+
+  #barraMobile {
+    display: inline-block;
+  }
+
+  #conteudo {
+    margin-top: 70px;
   }
 }

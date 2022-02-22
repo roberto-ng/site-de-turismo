@@ -10,8 +10,6 @@ import {
     faSortAlphaUp,
     faThumbsUp,
     faComments,
-    faCompress,
-    faLaptop,
 } from '@fortawesome/free-solid-svg-icons'
 
 const servicos = [
@@ -23,7 +21,7 @@ const servicos = [
     { texto: 'Vistos Consulares', icone: faComments },
 ];
 
-const Home: NextPage = () => {
+export default function Home() {
     return (
         <div className={styles.container}>
             <div className={styles.servicosWrapper}>
@@ -58,5 +56,3 @@ const Home: NextPage = () => {
         </div>
     )
 }
-
-export default Home
