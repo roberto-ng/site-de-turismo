@@ -10,7 +10,6 @@ import {
     faSortAlphaUp,
     faThumbsUp,
     faComments,
-    faCode,
     faCompress,
     faLaptop,
 } from '@fortawesome/free-solid-svg-icons'
@@ -22,9 +21,6 @@ const servicos = [
     { texto: 'Pacotes de Viagens', icone: faSortAlphaUp },
     { texto: 'Seguro Viagem', icone: faThumbsUp },
     { texto: 'Vistos Consulares', icone: faComments },
-    { texto: 'Atendimento Corporativo', icone: faCode },
-    { texto: 'Intercâmbio', icone: faCompress },
-    { texto: 'Congresso e Eventos', icone: faLaptop },
 ];
 
 const Home: NextPage = () => {
@@ -53,7 +49,7 @@ const Home: NextPage = () => {
                 <div className={styles.contatoDados}>
                     <div>
                         <p>Rua Lorem Ipsum 100000</p>
-                        <p>CEP 99999999, Pedra Pequena - MG</p>
+                        <p>CEP 99999999, Lorem Ipsum - SP</p>
                         <p>(99) 9999-9999</p>
                         <p>(99) 1234-5678</p>
                     </div>
