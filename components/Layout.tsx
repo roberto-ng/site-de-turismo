@@ -67,7 +67,7 @@ function MenuMobile() {
             <div id={styles.menuMobile}>
                 <button 
                     onClick={() => setMenuAberto(!menuAberto)}
-                    onBlur={() => setMenuAberto(false)}
+                    onBlur={() => setMenuAberto(false)} // fechar menu quando o botão perder o foco
                 >
                     <FontAwesomeIcon 
                         icon={faBars} 
@@ -80,7 +80,7 @@ function MenuMobile() {
                     className={menuAberto ? styles.aberto : ''}
                 >
                     {menuItens.map((item, i) => (
-                        <a href={item.link}>
+                        <a href={item.link} key={i}>
                             {item.texto}
                         </a>
                     ))}
