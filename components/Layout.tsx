@@ -65,7 +65,10 @@ function MenuMobile() {
             </div>
 
             <div id={styles.menuMobile}>
-                <button onClick={() => setMenuAberto(!menuAberto)}>
+                <button 
+                    onClick={() => setMenuAberto(!menuAberto)}
+                    onBlur={() => setMenuAberto(false)}
+                >
                     <FontAwesomeIcon 
                         icon={faBars} 
                         style={{ fontSize: '1.4em', height: '1em' }}
