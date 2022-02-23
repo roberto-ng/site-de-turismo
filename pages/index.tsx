@@ -38,21 +38,6 @@ export default function Home() {
                     ))}
                 </div>
             </div>
-            
-            <div className={styles.containerCinza}>
-                <h2 style={{ textAlign: 'center', margin: 0 }}>
-                    Contato:
-                </h2>
-
-                <div className={styles.contatoDados}>
-                    <div>
-                        <p>Rua Lorem Ipsum 100000</p>
-                        <p>CEP 99999999, Lorem Ipsum - SP</p>
-                        <p>(99) 9999-9999</p>
-                        <p>(99) 1234-5678</p>
-                    </div>
-                </div>
-            </div>
         </div>
     )
 }

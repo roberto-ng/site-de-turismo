@@ -147,6 +147,21 @@
   border-radius: 8px;
 }
 
+.containerCinza {
+  background-color: #313338;
+  color: white;
+  margin-top: 30px;
+  margin-bottom: 20px;
+  padding: 20px;
+  box-shadow: 0px 0px 20px 1px #000000;
+}
+
+.contatoDados {
+  font-size: 22px;
+  display: flex;
+  justify-content: center;
+}
+
 @media screen and (max-width: 1180px) {
   #barraMenu, #barra {
     display: none;

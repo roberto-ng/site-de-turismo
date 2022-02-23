@@ -1,4 +1,4 @@
-import type { NextPage } from 'next';
+import Link from 'next/link'
 import Head from 'next/head';
 import Image from 'next/image';
 import { ReactNode, useState } from 'react';
@@ -12,8 +12,12 @@ type Props = {
 
 const menuItens = [
     {
+        texto: 'Home',
+        link: '/',
+    },
+    {
         texto: 'Sobre Nós',
-        link: '#',
+        link: '/sobre-nos',
     },
     {
         texto: 'Intercâmbio',
@@ -40,9 +44,9 @@ function MenuDesktop() {
                 <ul>
                     {menuItens.map((item, i) => (
                         <li key={i}>
-                            <a href={item.link}>
-                                {item.texto}
-                            </a>
+                            <Link href={item.link}>
+                                <a>{item.texto}</a>
+                            </Link>
                         </li>
                     ))}
                 </ul>
@@ -53,6 +57,12 @@ function MenuDesktop() {
 
 function MenuMobile() {
     let [menuAberto, setMenuAberto] = useState(false);
+
+    const fecharMenu = () => {
+        // fechar o menu depois de 200 milisegundos
+        // sem isso, o navegador não muda de página quando o usuário clica num link do menu
+        setTimeout(() => setMenuAberto(false), 200);
+    };
 
     return (
         <div id={styles.barraMobile}>
@@ -67,7 +77,7 @@ function MenuMobile() {
             <div id={styles.menuMobile}>
                 <button 
                     onClick={() => setMenuAberto(!menuAberto)}
-                    onBlur={() => setMenuAberto(false)} // fechar menu quando o botão perder o foco
+                    onBlur={fecharMenu} // fechar menu quando o botão perder o foco
                 >
                     <FontAwesomeIcon 
                         icon={faBars} 
@@ -80,9 +90,9 @@ function MenuMobile() {
                     className={menuAberto ? styles.aberto : ''}
                 >
                     {menuItens.map((item, i) => (
-                        <a href={item.link} key={i}>
-                            {item.texto}
-                        </a>
+                        <Link href={item.link} key={i}>
+                            <a>{item.texto}</a>
+                        </Link>
                     ))}
                 </div>
             </div>
@@ -108,6 +118,21 @@ export default function Layout({ children }: Props) {
 
             <div id={styles.conteudo}>
                 {children}
+            </div>
+            
+            <div className={styles.containerCinza}>
+                <h2 style={{ textAlign: 'center', margin: 0 }}>
+                    Contato:
+                </h2>
+
+                <div className={styles.contatoDados}>
+                    <div>
+                        <p>Rua Lorem Ipsum 100000</p>
+                        <p>CEP 99999999, Lorem Ipsum - SP</p>
+                        <p>(99) 9999-9999</p>
+                        <p>(99) 1234-5678</p>
+                    </div>
+                </div>
             </div>
         </div>
     );

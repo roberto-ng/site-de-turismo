@@ -43,18 +43,3 @@ p.name {
   font-size: 2em;
   height: 1em;
 }
-
-.containerCinza {
-  background-color: #313338;
-  color: white;
-  margin-top: 30px;
-  margin-bottom: 20px;
-  padding: 20px;
-  box-shadow: 0px 0px 20px 1px #000000;
-}
-
-.contatoDados {
-  font-size: 22px;
-  display: flex;
-  justify-content: center;
-}
