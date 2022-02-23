@@ -32,13 +32,15 @@ const menuItens = [
 function MenuDesktop() {
     return (
         <div id={styles.barra}>
-            <div id={styles.logoContainer}>
-                <img 
-                    src="/res/logo.png" 
-                    width="150" 
-                    height="30" 
-                />
-            </div>
+            <Link href="/">
+                <a id={styles.logoContainer}>
+                    <img 
+                        src="/res/logo.png" 
+                        width="150" 
+                        height="30" 
+                    />
+                </a>
+            </Link>
 
             <div id={styles.barraMenu}>
                 <ul>
@@ -66,13 +68,15 @@ function MenuMobile() {
 
     return (
         <div id={styles.barraMobile}>
-            <div id={styles.logo}>
-                <img 
-                    src="/res/logo.png"
-                    width="150px"
-                    height="30px"
-                />
-            </div>
+            <Link href="/">
+                <a id={styles.logo}>
+                    <img 
+                        src="/res/logo.png"
+                        width="150px"
+                        height="30px"
+                    />
+                </a>
+            </Link>
 
             <div id={styles.menuMobile}>
                 <button 
