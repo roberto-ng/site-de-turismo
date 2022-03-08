@@ -21,11 +21,7 @@ const menuItens = [
     },
     {
         texto: 'Intercâmbio',
-        link: '#',
-    },
-    {
-        texto: 'Lazer',
-        link: '#',
+        link: '/intercambio',
     },
 ];
 

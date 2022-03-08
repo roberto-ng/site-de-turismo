@@ -7,16 +7,17 @@
 .titulo {
   color: crimson;
   margin: 0px;
+  font-size: 21px;
+  text-align: center;
 }
 
 .retangulo {
-  max-width: 600px;
+  max-width: 800px;
+  min-width: 400px;
   color: black;
   background-color: white;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   border-radius: 7px;
   margin: 10px;
   padding: 10px;
@@ -27,4 +28,20 @@
   font-size: 20px;
   text-align: justify;
   margin: 5px;
+  overflow-wrap: break-word;
+}
+
+@media screen and (max-width: 500px) {
+  .retangulo {
+    min-width: unset;
+    max-width: unset;
+    width: 90%;
+    height: unset;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .retangulo p {
+    text-align: start;
+  }
 }
