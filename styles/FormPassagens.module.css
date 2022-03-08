@@ -53,14 +53,29 @@
   color: crimson;
   padding: 8px;
   font-size: medium;
+  transition: background-color 0.4s, color 0.4s;
 }
 
 .button:hover {
   cursor: pointer;
+  color: white;
+  background-color: crimson;
 }
 
 .linha .titulo {
   margin: 0px;
   margin-bottom: 10px;
   font-size: 24px;
+}
+
+@media screen and (max-width: 500px) {
+    #caixaPesquisa {
+        padding: 5px;
+        height: unset;
+        max-height: unset;
+    }
+
+    .linha {
+        flex-direction: column;
+    }
 }
