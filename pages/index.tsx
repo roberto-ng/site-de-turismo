@@ -1,7 +1,6 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 import Image from 'next/image';
-import styles from '../styles/Home.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { 
     faPlane, 
@@ -10,7 +9,9 @@ import {
     faSortAlphaUp,
     faThumbsUp,
     faComments,
-} from '@fortawesome/free-solid-svg-icons'
+} from '@fortawesome/free-solid-svg-icons';
+import FormPassagens from '../components/FormPassagens';
+import styles from '../styles/Home.module.css';
 
 const servicos = [
     { texto: 'Passagens Aérias', icone: faPlane },
@@ -24,57 +25,7 @@ const servicos = [
 export default function Home() {
     return (
         <div className={styles.container}>
-            <div id={styles.caixaPesquisa}>
-                <div className={styles.linha}>
-                    <p className={styles.titulo}>
-                        Passagens aérias
-                    </p>
-                </div>
-
-                <div className={styles.linha}>
-                    <div className={styles.item}>
-                        <label>Origem: </label>
-                        <input 
-                            type="text" 
-                            className={styles.textInput}
-                            placeholder="Rio de Janeiro"
-                        />
-                    </div>
-
-                    <div className={styles.item}>
-                        <label>Destino: </label>
-                        <input 
-                            type="text" 
-                            className={styles.textInput}
-                            placeholder="Brasília"
-                        />
-                    </div>
-                </div>
-
-                <div className={styles.linha}>
-                    <div className={styles.item}>
-                        <label>Ida: </label>
-                        <input 
-                            type="text" 
-                            className={styles.textInput}
-                            placeholder="01/01/2023"
-                        />
-                    </div>
-
-                    <div className={styles.item}>
-                        <label>Volta: </label>
-                        <input 
-                            type="text" 
-                            className={styles.textInput}
-                            placeholder="02/01/2023"
-                        />
-                    </div>
-                </div>
-
-                <div className={styles.linha}>
-                    <button>Buscar</button>
-                </div>
-            </div>
+            <FormPassagens />
 
             <div className={styles.servicosWrapper}>
                 <div className={styles.servicos}>
