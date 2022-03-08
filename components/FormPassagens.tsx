@@ -1,7 +1,21 @@
+import { useState } from 'react';
 import styles from '../styles/FormPassagens.module.css';
+
+/** Calcula que dia será o dia seguinte */
+function calcularAmanha() {
+    // Data de hoje
+    const data = new Date();
+    // Incrementar a data por 1 dia
+    data.setDate(data.getDate() + 1);
+    return data;
+}
 
 /** Um formulário para simular a busca de passagens */
 export default function FormPassagens() {
+    const [mostrarResultado, setMostrarResultado] = useState(false);
+    const [hoje, setHoje] = useState(new Date());
+    const [amanha, setAmanha] = useState(calcularAmanha());
+
     return (
             <div id={styles.caixaPesquisa}>
                 <div className={styles.linha}>
@@ -36,7 +50,7 @@ export default function FormPassagens() {
                         <input 
                             type="text" 
                             className={styles.textInput}
-                            placeholder="01/01/2023"
+                            defaultValue={hoje.toLocaleDateString()}
                         />
                     </div>
 
@@ -45,7 +59,7 @@ export default function FormPassagens() {
                         <input 
                             type="text" 
                             className={styles.textInput}
-                            placeholder="02/01/2023"
+                            defaultValue={amanha.toLocaleDateString()}
                         />
                     </div>
                 </div>
