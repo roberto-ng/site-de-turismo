@@ -1,6 +1,7 @@
 import { useState } from 'react';
-import styles from '../styles/FormPassagens.module.css';
 import NumberFormat from 'react-number-format';
+import Link from 'next/link';
+import styles from '../styles/FormPassagens.module.css';
 
 /** Calcula que dia será o dia seguinte */
 function calcularAmanha() {
@@ -13,90 +14,66 @@ function calcularAmanha() {
 
 /** Um formulário para simular a busca de passagens */
 export default function FormPassagens() {
-    const [mostrarResultado, setMostrarResultado] = useState(false);
     const [hoje, setHoje] = useState(new Date());
     const [amanha, setAmanha] = useState(calcularAmanha());
 
-    const handleBuscarClick = () => {
-        setMostrarResultado(true);
-    };
-
-    const handleVoltarClick = () => {
-        setMostrarResultado(false);
-    }
-
-    if (mostrarResultado) {
-        return (
-            <div id={styles.caixaPesquisa}>
-                <p>Nenhum resultado encontrado.</p>
-                <button 
-                    onClick={handleVoltarClick} 
-                    className={styles.button}
-                >
-                    Voltar
-                </button>
+    return (
+        <div id={styles.caixaPesquisa}>
+            <div className={styles.linha}>
+                <p className={styles.titulo}>
+                    Passagens aérias
+                </p>
             </div>
-        );
-    } else {
-        return (
-            <div id={styles.caixaPesquisa}>
-                <div className={styles.linha}>
-                    <p className={styles.titulo}>
-                        Passagens aérias
-                    </p>
+
+            <div className={styles.linha}>
+                <div className={styles.item}>
+                    <label>Origem: </label>
+                    <input 
+                        type="text" 
+                        className={styles.textInput}
+                        placeholder="Rio de Janeiro"
+                    />
                 </div>
 
-                <div className={styles.linha}>
-                    <div className={styles.item}>
-                        <label>Origem: </label>
-                        <input 
-                            type="text" 
-                            className={styles.textInput}
-                            placeholder="Rio de Janeiro"
-                        />
-                    </div>
+                <div className={styles.item}>
+                    <label>Destino: </label>
+                    <input 
+                        type="text" 
+                        className={styles.textInput}
+                        placeholder="Brasília"
+                    />
+                </div>
+            </div>
 
-                    <div className={styles.item}>
-                        <label>Destino: </label>
-                        <input 
-                            type="text" 
-                            className={styles.textInput}
-                            placeholder="Brasília"
-                        />
-                    </div>
+            <div className={styles.linha}>
+                <div className={styles.item}>
+                    <label>Ida: </label>
+                    <NumberFormat
+                        className={styles.textInput}
+                        defaultValue={hoje.toLocaleDateString()}
+                        placeholder={hoje.toLocaleDateString()}
+                        format="##/##/####"
+                    />
                 </div>
 
-                <div className={styles.linha}>
-                    <div className={styles.item}>
-                        <label>Ida: </label>
-                        <NumberFormat
-                            className={styles.textInput}
-                            defaultValue={hoje.toLocaleDateString()}
-                            placeholder={hoje.toLocaleDateString()}
-                            format="##/##/####"
-                        />
-                    </div>
-
-                    <div className={styles.item}>
-                        <label>Volta: </label>
-                        <NumberFormat 
-                            className={styles.textInput}
-                            defaultValue={amanha.toLocaleDateString()}
-                            placeholder={amanha.toLocaleDateString()}
-                            format="##/##/####"
-                        />
-                    </div>
+                <div className={styles.item}>
+                    <label>Volta: </label>
+                    <NumberFormat 
+                        className={styles.textInput}
+                        defaultValue={amanha.toLocaleDateString()}
+                        placeholder={amanha.toLocaleDateString()}
+                        format="##/##/####"
+                    />
                 </div>
+            </div>
 
-                <div className={styles.linha}>
-                    <button 
-                        onClick={handleBuscarClick} 
-                        className={styles.button}
-                    >
+            <div className={styles.linha}>
+                <Link href="/resultado">
+                    <a className={styles.button}>
                         Buscar
-                    </button>
-                </div>
+                    </a>
+                </Link>
             </div>
-        );
-    }
+        </div>
+    );
 }

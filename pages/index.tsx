@@ -32,6 +32,7 @@ export default function Home() {
                     {servicos.map((servico, i) => (
                         <div key={i} className={styles.servico}>
                             <FontAwesomeIcon 
+                                //@ts-ignore
                                 icon={servico.icone} 
                                 className={styles.icone} 
                             />

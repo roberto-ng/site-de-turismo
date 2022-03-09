@@ -80,6 +80,7 @@ function MenuMobile() {
                     onBlur={fecharMenu} // fechar menu quando o botão perder o foco
                 >
                     <FontAwesomeIcon 
+                        //@ts-ignore
                         icon={faBars} 
                         style={{ fontSize: '1.4em', height: '1em' }}
                     />
