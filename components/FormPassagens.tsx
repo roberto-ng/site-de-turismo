@@ -1,21 +1,18 @@
-import { useState } from 'react';
+import { useMemo } from 'react';
 import NumberFormat from 'react-number-format';
 import Link from 'next/link';
 import styles from '../styles/FormPassagens.module.css';
 
-/** Calcula que dia será o dia seguinte */
-function calcularAmanha() {
-    // Data de hoje
-    const data = new Date();
-    // Incrementar a data por 1 dia
-    data.setDate(data.getDate() + 1);
-    return data;
-}
-
 /** Um formulário para simular a busca de passagens */
 export default function FormPassagens() {
-    const [hoje, setHoje] = useState(new Date());
-    const [amanha, setAmanha] = useState(calcularAmanha());
+    const hoje = useMemo(() => new Date(), []);
+    const amanha = useMemo(() => {
+        // Data de hoje
+        const data = new Date();
+        // Incrementar a data por 1 dia
+        data.setDate(data.getDate() + 1);
+        return data;
+    }, []);
 
     return (
         <div id={styles.caixaPesquisa}>

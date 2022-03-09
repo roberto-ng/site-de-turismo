@@ -30,6 +30,7 @@ export default function Resultado() {
                             src={resultado.imagem}
                             width="260px"
                             height="150px"
+                            placeholder="blur"
                         />
 
                         <div className={styles.dados}>
