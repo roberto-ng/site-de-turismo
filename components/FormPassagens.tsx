@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import styles from '../styles/FormPassagens.module.css';
+import NumberFormat from 'react-number-format';
 
 /** Calcula que dia será o dia seguinte */
 function calcularAmanha() {
@@ -28,7 +29,10 @@ export default function FormPassagens() {
         return (
             <div id={styles.caixaPesquisa}>
                 <p>Nenhum resultado encontrado.</p>
-                <button onClick={handleVoltarClick} className={styles.button}>
+                <button 
+                    onClick={handleVoltarClick} 
+                    className={styles.button}
+                >
                     Voltar
                 </button>
             </div>
@@ -65,25 +69,30 @@ export default function FormPassagens() {
                 <div className={styles.linha}>
                     <div className={styles.item}>
                         <label>Ida: </label>
-                        <input 
-                            type="text" 
+                        <NumberFormat
                             className={styles.textInput}
                             defaultValue={hoje.toLocaleDateString()}
+                            placeholder={hoje.toLocaleDateString()}
+                            format="##/##/####"
                         />
                     </div>
 
                     <div className={styles.item}>
                         <label>Volta: </label>
-                        <input 
-                            type="text" 
+                        <NumberFormat 
                             className={styles.textInput}
                             defaultValue={amanha.toLocaleDateString()}
+                            placeholder={amanha.toLocaleDateString()}
+                            format="##/##/####"
                         />
                     </div>
                 </div>
 
                 <div className={styles.linha}>
-                    <button onClick={handleBuscarClick} className={styles.button}>
+                    <button 
+                        onClick={handleBuscarClick} 
+                        className={styles.button}
+                    >
                         Buscar
                     </button>
                 </div>
