@@ -1,10 +1,13 @@
-import { useMemo } from 'react';
+import { useContext, useMemo } from 'react';
 import NumberFormat from 'react-number-format';
 import Link from 'next/link';
 import styles from '../styles/FormPassagens.module.css';
+import { FormularioContext } from '../pages/_app';
 
 /** Um formulário para simular a busca de passagens */
 export default function FormPassagens() {
+    const [formulario, setFormulario] = useContext(FormularioContext);
+
     const hoje = useMemo(() => new Date(), []);
     const amanha = useMemo(() => {
         // Data de hoje
@@ -29,6 +32,11 @@ export default function FormPassagens() {
                         type="text" 
                         className={styles.textInput}
                         placeholder="Rio de Janeiro"
+                        value={formulario.origem}
+                        onChange={(e) => {
+                            const novoFormulario = { ...formulario, origem: e.target.value };
+                            setFormulario(novoFormulario);
+                        }}
                     />
                 </div>
 
@@ -38,6 +46,11 @@ export default function FormPassagens() {
                         type="text" 
                         className={styles.textInput}
                         placeholder="Brasília"
+                        value={formulario.destino}
+                        onChange={(e) => {
+                            const novoFormulario = { ...formulario, destino: e.target.value };
+                            setFormulario(novoFormulario);
+                        }}
                     />
                 </div>
             </div>
@@ -47,9 +60,13 @@ export default function FormPassagens() {
                     <label>Ida: </label>
                     <NumberFormat
                         className={styles.textInput}
-                        defaultValue={hoje.toLocaleDateString()}
+                        value={formulario.ida}
                         placeholder={hoje.toLocaleDateString()}
                         format="##/##/####"
+                        onValueChange={({ value }) => {
+                            const novoFormulario = { ...formulario, ida: value };
+                            setFormulario(novoFormulario);
+                        }}
                     />
                 </div>
 
@@ -57,9 +74,13 @@ export default function FormPassagens() {
                     <label>Volta: </label>
                     <NumberFormat 
                         className={styles.textInput}
-                        defaultValue={amanha.toLocaleDateString()}
+                        value={formulario.volta}
                         placeholder={amanha.toLocaleDateString()}
                         format="##/##/####"
+                        onValueChange={({ value }) => {
+                            const novoFormulario = { ...formulario, volta: value };
+                            setFormulario(novoFormulario);
+                        }}
                     />
                 </div>
             </div>

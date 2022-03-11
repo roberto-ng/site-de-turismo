@@ -22,9 +22,9 @@
 }
 
 .titulo {
-  color: crimson;
   margin: 0px;
-  font-size: 21px;
+  margin-bottom: 10px;
+  font-size: x-large;
   text-align: center;
 }
 
