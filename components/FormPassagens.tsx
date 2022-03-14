@@ -1,20 +1,33 @@
-import { useContext, useMemo } from 'react';
+import { useContext, useEffect, useMemo, useState } from 'react';
 import NumberFormat from 'react-number-format';
 import Link from 'next/link';
 import styles from '../styles/FormPassagens.module.css';
 import { FormularioContext } from '../pages/_app';
 
+/** Retorna a data de amanhã */
+function buscarDiaSeguinte() {
+    // Buscar data atual
+    const data = new Date();
+    // Incrementar a data por 1 dia
+    data.setDate(data.getDate() + 1);
+    return data;
+}
+
 /** Um formulário para simular a busca de passagens */
 export default function FormPassagens() {
     const [formulario, setFormulario] = useContext(FormularioContext);
 
-    const hoje = useMemo(() => new Date(), []);
-    const amanha = useMemo(() => {
-        // Data de hoje
-        const data = new Date();
-        // Incrementar a data por 1 dia
-        data.setDate(data.getDate() + 1);
-        return data;
+    const [hoje, setHoje] = useState('');
+    const [amanha, setAmanha] = useState('');
+
+    useEffect(() => {
+        if (window != null) {
+            const dataHoje = new Date();
+            const dataAmanha = buscarDiaSeguinte();
+
+            setHoje(dataHoje.toLocaleDateString());
+            setAmanha(dataAmanha.toLocaleDateString());
+        }
     }, []);
 
     return (
@@ -61,7 +74,7 @@ export default function FormPassagens() {
                     <NumberFormat
                         className={styles.textInput}
                         value={formulario.ida}
-                        placeholder={hoje.toLocaleDateString()}
+                        placeholder={hoje}
                         format="##/##/####"
                         onValueChange={({ value }) => {
                             const novoFormulario = { ...formulario, ida: value };
@@ -75,7 +88,7 @@ export default function FormPassagens() {
                     <NumberFormat 
                         className={styles.textInput}
                         value={formulario.volta}
-                        placeholder={amanha.toLocaleDateString()}
+                        placeholder={amanha}
                         format="##/##/####"
                         onValueChange={({ value }) => {
                             const novoFormulario = { ...formulario, volta: value };
