@@ -1,14 +1,18 @@
 import Link from 'next/link'
-import Head from 'next/head';
-import Image from 'next/image';
+import Head from 'next/head'
 import { ReactNode, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
-import styles from '../styles/Layout.module.css';
+import { faBars, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
+import styles from '../styles/Layout.module.css'
+import Sobre from './Sobre'
 
 type Props = {
     children?: ReactNode,
 }
+
+const githubURL = 'https://github.com/roberto-ng';
+const email = 'robertoguedesn@gmail.com';
 
 const menuItens = [
     {
@@ -121,20 +125,32 @@ export default function Layout({ children }: Props) {
                 {children}
             </div>
             
-            <div className={styles.containerCinza}>
-                <h2 style={{ textAlign: 'center', margin: 0 }}>
-                    Contato:
-                </h2>
-
-                <div className={styles.contatoDados}>
+            <div className={styles.centralizar}>
+                <div className={styles.caixaContato}>
                     <div>
-                        <p>Rua Lorem Ipsum 100000</p>
-                        <p>CEP 99999999, Lorem Ipsum - SP</p>
-                        <p>(99) 9999-9999</p>
-                        <p>(99) 1234-5678</p>
+                        <p>Site desenvolvido por Roberto Guedes</p>
+                        <div className={styles.linha}>
+                            <FontAwesomeIcon 
+                                //@ts-ignore
+                                icon={faEnvelope} 
+                                style={{ height: 40, width: 40, marginLeft: 8, }}
+                            />
+                            <p>Contato: <a href={'mailto: ' + email}>{email}</a></p>
+                        </div>
+                        <div className={styles.linha}>
+                            <FontAwesomeIcon 
+                                //@ts-ignore
+                                icon={faGithubSquare} 
+                                style={{ height: 40, width: 40, marginLeft: 8, }}
+                            />
+
+                            <p>Github: <a href={githubURL}>{githubURL}</a></p>
+                        </div>
                     </div>
                 </div>
             </div>
+
+            <Sobre />
         </div>
     );
 };
