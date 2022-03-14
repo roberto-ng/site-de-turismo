@@ -133,7 +133,7 @@ export default function Layout({ children }: Props) {
                             <FontAwesomeIcon 
                                 //@ts-ignore
                                 icon={faEnvelope} 
-                                style={{ height: 40, width: 40, marginLeft: 8, }}
+                                style={{ height: 40, width: 40, marginRight: 5 }}
                             />
                             <p>Contato: <a href={'mailto: ' + email}>{email}</a></p>
                         </div>
@@ -141,7 +141,7 @@ export default function Layout({ children }: Props) {
                             <FontAwesomeIcon 
                                 //@ts-ignore
                                 icon={faGithubSquare} 
-                                style={{ height: 40, width: 40, marginLeft: 8, }}
+                                style={{ height: 40, width: 40, marginRight: 5 }}
                             />
 
                             <p>Github: <a href={githubURL}>{githubURL}</a></p>
