@@ -129,22 +129,31 @@ export default function Layout({ children }: Props) {
                 <div className={styles.caixaContato}>
                     <div>
                         <p>Site desenvolvido por Roberto Guedes</p>
+
                         <div className={styles.linha}>
                             <FontAwesomeIcon 
                                 //@ts-ignore
                                 icon={faEnvelope} 
                                 style={{ height: 40, width: 40, marginRight: 5 }}
+                                className={styles.iconeContato}
                             />
-                            <p>Contato: <a href={'mailto: ' + email}>{email}</a></p>
+
+                            <div className={styles.linha}>
+                                <p>Contato: <a href={'mailto: ' + email}>{email}</a></p>
+                            </div>
                         </div>
+
                         <div className={styles.linha}>
                             <FontAwesomeIcon 
                                 //@ts-ignore
                                 icon={faGithubSquare} 
                                 style={{ height: 40, width: 40, marginRight: 5 }}
+                                className={styles.iconeContato}
                             />
 
-                            <p>Github: <a href={githubURL}>{githubURL}</a></p>
+                            <div className={styles.linha}>
+                                <p>Github: <a href={githubURL}>{githubURL}</a></p>
+                            </div>
                         </div>
                     </div>
                 </div>
