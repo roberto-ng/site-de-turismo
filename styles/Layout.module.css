@@ -3,7 +3,6 @@
 }
 
 #fundo {
-  background: url("/res/fundos/nuvem-fundo.png") 0% 0%;
   animation: fundoAnimado 40s linear infinite;
   position: fixed;
   margin: 0px;

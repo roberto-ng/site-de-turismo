@@ -113,11 +113,16 @@ export default function Layout({ children }: Props) {
                 <title>Turismo</title>
                 
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-                <link rel="icon" href="/favicon.ico" />
+                <link rel="icon" href={prefixo + '/favicon.ico'} />
             </Head>
 
             {/* Contem a imagem com nuvens que passa pela tela no fundo da página */}
-            <div id={styles.fundo} />
+            <div
+                id={styles.fundo} 
+                style={{
+                    background: `url("${prefixo}/res/fundos/nuvem-fundo.png") 0% 0%`,
+                }}
+            />
 
             <MenuDesktop />
             <MenuMobile />
