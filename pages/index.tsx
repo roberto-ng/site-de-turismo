@@ -11,8 +11,8 @@ import FormPassagens from '../components/FormPassagens';
 import styles from '../styles/Home.module.css';
 
 const servicos = [
-    { texto: 'Passagens Aérias', icone: faPlane },
     { texto: 'Hotelaria', icone: faHome },
+    { texto: 'Passagens Aérias', icone: faPlane },
     { texto: 'Locação de Veículos', icone: faBus },
     { texto: 'Pacotes de Viagens', icone: faSortAlphaUp },
     { texto: 'Seguro Viagem', icone: faThumbsUp },
