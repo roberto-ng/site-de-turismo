@@ -1,11 +1,12 @@
 import Link from 'next/link'
 import Head from 'next/head'
-import { ReactNode, useState } from 'react';
+import { ReactNode, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 import { faGithubSquare } from '@fortawesome/free-brands-svg-icons'
 import styles from '../styles/Layout.module.css'
 import Sobre from './Sobre'
+import prefixo from '../utils/prefixo'
 
 type Props = {
     children?: ReactNode,
@@ -35,7 +36,7 @@ function MenuDesktop() {
             <Link href="/">
                 <a id={styles.logoContainer}>
                     <img 
-                        src="/res/logo.png" 
+                        src={prefixo + '/res/logo.png'} 
                         width="150" 
                         height="30" 
                     />
@@ -71,7 +72,7 @@ function MenuMobile() {
             <Link href="/">
                 <a id={styles.logo}>
                     <img 
-                        src="/res/logo.png"
+                        src={prefixo + '/res/logo.png'}
                         width="150px"
                         height="30px"
                     />

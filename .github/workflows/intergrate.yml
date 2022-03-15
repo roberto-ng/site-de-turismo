@@ -3,6 +3,9 @@ on: [push]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    env: 
+      NEXT_PUBLIC_BASE_PATH: /site-de-turismo
+
     defaults:
       run:
         working-directory: ./

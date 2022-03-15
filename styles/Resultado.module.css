@@ -92,7 +92,6 @@
 
 @media screen and (max-width: 460px) {
   .passagem img {
-    width: unset;
-    max-width: 150px;
+    width: 150px;
   }
 }

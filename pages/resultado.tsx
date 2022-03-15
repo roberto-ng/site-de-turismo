@@ -1,6 +1,7 @@
 import React from 'react';
 import FormPassagens from '../components/FormPassagens'
 import styles from '../styles/Resultado.module.css';
+import prefixo from '../utils/prefixo'
 
 const resultados = [
     { imagem: '/res/fotos/foto1.jpg', valor: 'R$9.999,99' },
@@ -21,7 +22,7 @@ export default function Resultado() {
 
                 {resultados.map((resultado, i) => (
                     <div className={styles.passagem} key={i}>
-                        <img src={resultado.imagem} />
+                        <img src={prefixo + resultado.imagem} />
 
                         <div className={styles.dados}>
                             <p style={{ fontSize: 'large', textAlign: 'center' }}>
